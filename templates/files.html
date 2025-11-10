@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Files | SkyVault</title>
+</head>
+<body>
+    <h2>Your Files</h2>
+    {% for f in files %}
+        <p><a href="/download/{{ f }}">{{ f }}</a></p>
+    {% endfor %}
+    <p><a href="/dashboard">Back to Dashboard</a></p>
+</body>
+</html>

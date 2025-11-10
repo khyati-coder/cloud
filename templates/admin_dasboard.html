@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard | SkyVault</title>
+</head>
+<body>
+    <h2>Admin Panel</h2>
+    {% for s, count in students %}
+        <p>{{ s }} — {{ count }} files <a href="/admin/view/{{ s }}">View</a></p>
+    {% endfor %}
+    <p><a href="/logout">Logout</a></p>
+</body>
+</html>
