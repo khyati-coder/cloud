@@ -135,7 +135,10 @@ def admin_view(username):
     files = [f.filename for f in File.query.filter_by(user_id=user.id).all()]
     return render_template('files.html', files=files)
 
-if __name__ == '_main_':
-    with app.app_context():
-        db.create_all()
-    app.run(host='0.0.0.0', port=8080)
+# Expose the Flask app for Vercel
+handler = app
+
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
